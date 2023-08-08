@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>navigation,slideshow,script</title>
+	<body>
+		
+
+		<section><center>
+			<img class="mySlides" src="10.jpeg" style="width:25%;">
+			<img class="mySlides" src="3.jpeg" style="width:25%;">
+			<img class="mySlides" src="4.jpeg" style="width:25%;">
+			<img class="mySlides" src="8.jpeg" style="width:25%;">
+			<img class="mySlides" src="9.jpeg" style="width:25%;">
+		</center></section>
+		<script>
+			//automatic Slideshow-change image every 3 seconds
+			var myIndex=0;
+			carousel();
+
+			function carousel(){
+				var i;
+				var x=document.getElementsByClassName("mySlides");
+				for(i=0;i<x.length;i++)
+				{
+					x[i].style.display="none";
+				}
+				myIndex++;
+				if(myIndex>x.length)
+				{
+					myIndex=1;
+				}
+				x[myIndex-1].style.display="block";
+				setTimeout(carousel,3000);
+			}
+		</script>
+	</body>
+</html>
